@@ -1,0 +1,34 @@
+<div class="menu-container">
+  
+  <div class="logo-area">
+    <img class="spy-icon" src="images/spy.png" alt="spy">
+    <h1 class="game-title">КТО ШПИОН?</h1>
+    <p class="game-subtitle">Разведай тайну среди своих друзей</p>
+  </div>
+
+  <div class="menu-buttons">
+    <button class="btn-menu btn-local" (click)="onStartLocal.emit()">
+      <span class="btn-icon">📱</span>
+      <div class="btn-text">
+        <span class="btn-title">На одном телефоне</span>
+        <span class="btn-desc">Передавайте смартфон по кругу</span>
+      </div>
+    </button>
+
+    <button class="btn-menu btn-online" disabled>
+      <span class="btn-icon">🌐</span>
+      <div class="btn-text">
+        <span class="btn-title">Играть онлайн</span>
+        <span class="btn-desc">Каждый видит экран на своем смартфоне</span>
+      </div>
+      <span class="badge-soon">Скоро</span>
+    </button>
+  </div>
+
+  <footer class="menu-footer">
+    <p>v1.0 • Сделано для компании друзей</p>
+    <p>И для любимой Леночки♥️</p>
+    <p>by Dreyk</p>
+  </footer>
+
+</div>

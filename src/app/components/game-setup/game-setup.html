@@ -1,0 +1,62 @@
+<div class="setup-container">
+  <header class="setup-header">
+    <button class="btn-icon" (click)="onBack.emit()">←</button>
+    <h2>Настройка игры</h2>
+  </header>
+
+  <section class="section-players">
+    <h3>Игроки ({{ players.length }})</h3>
+    
+    <div class="input-group">
+      <input 
+        type="text" 
+        [(ngModel)]="newPlayerName" 
+        placeholder="Имя игрока" 
+        (keyup.enter)="addPlayer()"
+        maxLength="15"
+      />
+      <button class="btn-add" (click)="addPlayer()">+</button>
+    </div>
+
+    @if (players.length > 0) {
+      <div class="players-list">
+        @for (player of players; track $index) {
+          <div class="player-item">
+            <span>{{ player }}</span>
+            <button class="btn-delete" (click)="removePlayer($index)">×</button>
+          </div>
+        }
+      </div>
+    }
+  </section>
+
+  <section class="section-settings">
+    <div class="setting-row">
+      <div class="setting-info">
+        <span class="setting-title">🕵️‍♂️ Шпионы</span>
+        <span class="setting-desc">Количество шпионов в игре</span>
+      </div>
+      <div class="counter">
+        <button (click)="changeSpyCount(-1)">-</button>
+        <span class="counter-value">{{ spyCount }}</span>
+        <button (click)="changeSpyCount(1)">+</button>
+      </div>
+    </div>
+
+    <div class="setting-row">
+      <div class="setting-info">
+        <span class="setting-title">⏱️ Таймер</span>
+        <span class="setting-desc">Время на обсуждение (мин)</span>
+      </div>
+      <div class="counter">
+        <button (click)="changeTime(-1)">-</button>
+        <span class="counter-value">{{ timeLimit }}</span>
+        <button (click)="changeTime(1)">+</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="setup-footer">
+    <button class="btn-primary" (click)="onStart()">Раздать роли →</button>
+  </footer>
+</div>

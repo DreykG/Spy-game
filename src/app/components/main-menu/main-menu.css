@@ -1,0 +1,134 @@
+:root {
+  --o: #f47a29;
+  --y: #ffcc00;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+  padding: 40px 10px 10px 10px;
+}
+
+/* Логотип и анимация */
+.logo-area {
+  margin-top: 20px;
+}
+
+.spy-icon {
+  width: 100px;
+  height: auto;
+  font-size: 5rem;
+  margin-bottom: 10px;
+  animation: float 3s ease-in-out infinite;
+  
+}
+
+.game-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(-45deg, #f45729, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.game-subtitle {
+  color: #ffb700;
+  font-size: 1rem;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* Кнопки меню */
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.btn-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #ffcc00;
+  border-color: #ffcc00;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.btn-menu:active {
+  transform: scale(0.98);
+}
+
+.btn-local {
+  background: #24221e;
+  border-color: #9a760087;
+}
+
+.btn-local:active {
+  border-color: #03dac6;
+}
+
+.btn-online {
+  background: #1a1816;
+  border-color: #262422;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-menu .btn-icon {
+  font-size: 2rem;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.btn-desc {
+  font-size: 0.85rem;
+  color: #9e968a;
+  margin-top: 4px;
+}
+
+/* Нашлепку "Скоро" */
+.badge-soon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #eea700a1;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.menu-footer {
+  margin-top: 10px;
+  color: #524b44;
+  font-size: 0.8rem;
+}
+
+/* Анимация левитации для шпиона */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}

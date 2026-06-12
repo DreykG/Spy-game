@@ -1,0 +1,187 @@
+.setup-container {
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+}
+
+.setup-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.setup-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* Скроллящийся список игроков */
+.section-players {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Важно для корректного скролла внутри flex */
+  margin-bottom: 20px;
+}
+
+.section-players h3{
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input {
+  flex: 1;
+  background: #24221ecd;
+  border: 2px solid #38342e;
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #fbbc5ebd;
+}
+
+.btn-add {
+  background: #f47a29;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  width: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.players-list {
+  flex: 1;
+  overflow-y: auto;
+  background: #201e1d;
+  border-radius: 16px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #302822;
+  padding: 10px 16px;
+  border-radius: 10px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #ff5252;
+  font-size: 1.5rem;
+  padding: 0 5px;
+}
+
+/* Каунтеры (Шпионы / Время) */
+.section-settings {
+  background: #201e1d;
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.setting-desc {
+  font-size: 0.8rem;
+  color: #8a8a9e;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  background: #302822;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.counter button {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.counter button:active {
+  background: #4a4238;
+}
+
+.counter-value {
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.setting-title{
+  color: #f47a29;
+}
+
+/* Общие кнопки */
+.btn-icon {
+  background: #24211e;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(-45deg, #f45729, #ffcc00);
+  color: #000000;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(218, 193, 3, 0.2);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

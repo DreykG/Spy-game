@@ -1,0 +1,53 @@
+<div class="game-container">
+  
+  @if (!isDiscussionPhase) {
+    <div class="card-phase">
+      <header class="game-header">
+        <h3>Передайте телефон</h3>
+        <h1 class="player-name">{{ getCurrentPlayer().name }}</h1>
+      </header>
+
+      <div class="card-wrapper">
+        @if (!isRoleVisible) {
+          <div class="role-card hidden" (click)="toggleRoleVisibility()">
+            <span class="fingerprint">👁️</span>
+            <p>Нажми, чтобы увидеть слово</p>
+          </div>
+        } @else {
+          <div class="role-card revealed">
+            <h2 class="secret-word">{{ gameService.getWordOrRoleForPlayer(getCurrentPlayer()) }}</h2>
+            <p class="warning-text">Не показывай экран другим игрокам!</p>
+          </div>
+        }
+      </div>
+
+      <footer class="game-footer">
+        @if (isRoleVisible) {
+          <button class="btn-primary" (click)="nextStep()">Окей, скрыть карту →</button>
+        }
+      </footer>
+    </div>
+  } 
+  
+  @else {
+    <div class="discussion-phase">
+      <header class="discussion-header">
+        <h2>🕵️‍♂️ Идет обсуждение...</h2>
+        <p>Задавайте друг другу вопросы!</p>
+      </header>
+
+      <div class="timer-display" [class.danger]="timeLeft < 30">
+        {{ formattedTime }}
+      </div>
+
+      <div class="discussion-rules">
+        <p>💡 <strong>Правила:</strong> Игроки по очереди задают вопросы друг другу. Шпион должен догадаться, о каком слове идет речь, кося под мирного. Мирные должны вычислить шпиона вопросами с подвохом.</p>
+      </div>
+
+      <footer class="game-footer">
+        <button class="btn-danger" (click)="onGameEnd.emit()">Завершить игру</button>
+      </footer>
+    </div>
+  }
+
+</div>

@@ -1,12 +1,25 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MainMenu } from './components/main-menu/main-menu';
+import { GameSetup } from './components/game-setup/game-setup';
+import { GamePlay } from './components/game-play/game-play'; // Проверь этот импорт!
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    CommonModule, 
+    MainMenu, 
+    GameSetup, 
+    GamePlay
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
-  protected readonly title = signal('spy');
+  currentScreen: 'menu' | 'setup' | 'play' = 'menu';
+
+  changeScreen(screen: 'menu' | 'setup' | 'play') {
+    this.currentScreen = screen;
+  }
 }

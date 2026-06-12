@@ -1,0 +1,151 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card-phase, .discussion-phase {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.game-header, .discussion-header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.player-name {
+  font-size: 2.2rem;
+  color: #f47a29;
+  margin: 5px 0;
+  text-shadow: 0 0 10px rgba(218, 146, 3, 0.3);
+}
+
+/* Карточки ролей */
+.card-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.role-card {
+  width: 100%;
+  max-width: 320px;
+  height: 380px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.secret-word{
+  color: #f47a29;
+}
+
+.role-card.hidden {
+  background: linear-gradient(135deg, #5b3f25, #000000);
+  border: 3px dashed #ff6600;
+}
+
+.role-card.hidden:active {
+  transform: scale(0.95);
+}
+
+.role-card.revealed {
+  background: #24231e;
+  border: 3px solid #f47a29ae;
+  animation: flipIn 0.4s ease-out;
+}
+
+.fingerprint {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+.warning-text {
+  font-size: 0.85rem;
+  color: #ff0000;
+  margin-top: 50px;
+}
+
+/* Элементы таймера */
+.timer-display {
+  font-size: 5rem;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  margin: 40px 0;
+  color: #da8b03;
+}
+
+.timer-display.danger {
+  color: #ff5252;
+  animation: blink 1s infinite;
+}
+
+.discussion-rules {
+  background: #24211e;
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #c5bbb0;
+}
+
+/* Кнопки */
+.game-footer {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(-45deg, #f458299d, #ffcc00b3);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.btn-danger {
+  margin-top: 15px;
+  width: 100%;
+  background: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Анимации */
+@keyframes flipIn {
+  from { transform: rotateY(90deg); opacity: 0; }
+  to { transform: rotateY(0deg); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
