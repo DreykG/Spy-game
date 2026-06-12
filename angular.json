@@ -21,9 +21,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
-                "src/favicon.ico",
-                "src/assets"
+                "input": "public"
               }
             ],
             "styles": [
@@ -76,6 +74,9 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
